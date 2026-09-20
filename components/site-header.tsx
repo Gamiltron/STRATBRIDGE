@@ -1,10 +1,13 @@
+'use client'
+
+import { useState } from 'react'
 import { BrandLogo } from '@/components/brand-logo'
-import { ArrowRightIcon } from '@/components/icons'
+import { ArrowRightIcon, CloseIcon, MenuIcon } from '@/components/icons'
 
 const navItems = [
   { label: 'Home', href: '/', caret: false },
   { label: 'About', href: '/about', caret: false },
-  { label: 'Services', href: '#', caret: true },
+  { label: 'Services', href: '/readiness-assessment', caret: true },
   { label: 'Functions', href: '#', caret: true },
   { label: 'Insights', href: '#', caret: false },
   { label: 'Contact us', href: '#', caret: false },
@@ -28,6 +31,8 @@ function Caret() {
 }
 
 export function SiteHeader({ active }: { active?: string }) {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <header className="bg-cream">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-6 lg:px-10">
@@ -57,14 +62,70 @@ export function SiteHeader({ active }: { active?: string }) {
           </ul>
         </nav>
 
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-2 bg-rust px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-rust/90"
-        >
-          Let&apos;s Talk
-          <ArrowRightIcon className="h-4 w-4" />
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="#contact"
+            className="hidden items-center gap-2 bg-rust px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-rust/90 lg:inline-flex"
+          >
+            Let&apos;s Talk
+            <ArrowRightIcon className="h-4 w-4" />
+          </a>
+
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            className="inline-flex h-11 w-11 items-center justify-center text-navy transition-colors hover:text-rust lg:hidden"
+          >
+            {isOpen ? (
+              <CloseIcon className="h-6 w-6" />
+            ) : (
+              <MenuIcon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
+
+      {isOpen && (
+        <nav
+          id="mobile-menu"
+          aria-label="Mobile"
+          className="border-t border-navy/10 lg:hidden"
+        >
+          <ul className="mx-auto flex max-w-7xl flex-col px-6 py-4 text-sm text-navy">
+            {navItems.map((item) => {
+              const isActive = item.label === active
+              return (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`flex items-center justify-between py-3 transition-colors hover:text-rust ${
+                      isActive ? 'font-medium text-rust' : ''
+                    }`}
+                  >
+                    {item.label}
+                    {item.caret ? <Caret /> : null}
+                  </a>
+                </li>
+              )
+            })}
+            <li className="pt-3">
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex items-center gap-2 bg-rust px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-rust/90"
+              >
+                Let&apos;s Talk
+                <ArrowRightIcon className="h-4 w-4" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }

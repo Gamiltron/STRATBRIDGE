@@ -150,6 +150,25 @@ export function CartIcon(props: IconProps) {
   )
 }
 
+export function CheckIcon(props: IconProps) {
+  return (
+    <svg aria-hidden="true" {...base} {...props}>
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  )
+}
+
+export function NetworkIcon(props: IconProps) {
+  return (
+    <svg aria-hidden="true" {...base} {...props}>
+      <circle cx="6" cy="6" r="2.4" />
+      <circle cx="18" cy="6" r="2.4" />
+      <circle cx="12" cy="18" r="2.4" />
+      <path d="M8 7.3 12 15.7M16 7.3 12 15.7M8.4 6h7.2" />
+    </svg>
+  )
+}
+
 export function LinkedinIcon(props: IconProps) {
   return (
     <svg aria-hidden="true" {...base} {...props}>
@@ -164,6 +183,22 @@ export function MailIcon(props: IconProps) {
     <svg aria-hidden="true" {...base} {...props}>
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <path d="m4 7 8 6 8-6" />
+    </svg>
+  )
+}
+
+export function MenuIcon(props: IconProps) {
+  return (
+    <svg aria-hidden="true" {...base} {...props}>
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  )
+}
+
+export function CloseIcon(props: IconProps) {
+  return (
+    <svg aria-hidden="true" {...base} {...props}>
+      <path d="M6 6l12 12M18 6 6 18" />
     </svg>
   )
 }
