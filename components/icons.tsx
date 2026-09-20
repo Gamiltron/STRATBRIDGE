@@ -187,6 +187,15 @@ export function MailIcon(props: IconProps) {
   )
 }
 
+export function MapPinIcon(props: IconProps) {
+  return (
+    <svg aria-hidden="true" {...base} {...props}>
+      <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" />
+      <circle cx="12" cy="10" r="2.6" />
+    </svg>
+  )
+}
+
 export function MenuIcon(props: IconProps) {
   return (
     <svg aria-hidden="true" {...base} {...props}>

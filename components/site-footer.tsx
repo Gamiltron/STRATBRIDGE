@@ -1,7 +1,14 @@
+import Link from 'next/link'
 import { BrandLogo } from '@/components/brand-logo'
 import { LinkedinIcon, MailIcon } from '@/components/icons'
 
-const footerNav = ['About', 'Services', 'Functions', 'Insights', 'Contact us']
+const footerNav = [
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/readiness-assessment' },
+  { label: 'Functions', href: '#' },
+  { label: 'Insights', href: '#' },
+  { label: 'Contact us', href: '/contact' },
+]
 
 export function SiteFooter() {
   return (
@@ -13,10 +20,10 @@ export function SiteFooter() {
           <nav aria-label="Footer">
             <ul className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-cream/85">
               {footerNav.map((item) => (
-                <li key={item}>
-                  <a href="#" className="transition-colors hover:text-cream">
-                    {item}
-                  </a>
+                <li key={item.label}>
+                  <Link href={item.href} className="transition-colors hover:text-cream">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -31,7 +38,7 @@ export function SiteFooter() {
               <LinkedinIcon className="h-4 w-4" />
             </a>
             <a
-              href="#contact"
+              href="mailto:hello@stratbridge.co"
               aria-label="Email Stratbridge & Co."
               className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/30 text-cream transition-colors hover:border-cream hover:text-cream"
             >

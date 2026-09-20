@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { BrandLogo } from '@/components/brand-logo'
 import { ArrowRightIcon, CloseIcon, MenuIcon } from '@/components/icons'
 
@@ -10,7 +11,7 @@ const navItems = [
   { label: 'Services', href: '/readiness-assessment', caret: true },
   { label: 'Functions', href: '#', caret: true },
   { label: 'Insights', href: '#', caret: false },
-  { label: 'Contact us', href: '#', caret: false },
+  { label: 'Contact us', href: '/contact', caret: false },
 ]
 
 function Caret() {
@@ -44,7 +45,7 @@ export function SiteHeader({ active }: { active?: string }) {
               const isActive = item.label === active
               return (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
                   className={`inline-flex items-center gap-1 transition-colors hover:text-rust ${
@@ -55,7 +56,7 @@ export function SiteHeader({ active }: { active?: string }) {
                 >
                   {item.label}
                   {item.caret ? <Caret /> : null}
-                </a>
+                </Link>
               </li>
               )
             })}
@@ -63,13 +64,13 @@ export function SiteHeader({ active }: { active?: string }) {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="hidden items-center gap-2 bg-rust px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-rust/90 lg:inline-flex"
           >
             Let&apos;s Talk
             <ArrowRightIcon className="h-4 w-4" />
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -99,7 +100,7 @@ export function SiteHeader({ active }: { active?: string }) {
               const isActive = item.label === active
               return (
                 <li key={item.label}>
-                  <a
+                  <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? 'page' : undefined}
@@ -109,19 +110,19 @@ export function SiteHeader({ active }: { active?: string }) {
                   >
                     {item.label}
                     {item.caret ? <Caret /> : null}
-                  </a>
+                  </Link>
                 </li>
               )
             })}
             <li className="pt-3">
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="inline-flex items-center gap-2 bg-rust px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-rust/90"
               >
                 Let&apos;s Talk
                 <ArrowRightIcon className="h-4 w-4" />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

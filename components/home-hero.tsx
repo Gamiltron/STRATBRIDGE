@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ArrowRightIcon } from '@/components/icons'
 
 export function HomeHero() {
@@ -23,13 +24,13 @@ export function HomeHero() {
             We help organisations turn transformation plans into real business
             outcomes.
           </p>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="mt-8 inline-flex items-center gap-3 bg-rust px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-rust/90"
           >
             Start a Conversation
             <ArrowRightIcon className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
 
         {/* Image column */}
