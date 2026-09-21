@@ -9,6 +9,7 @@ const serviceItems = [
   { label: 'Readiness Assessment', href: '/readiness-assessment' },
   { label: 'AI & Automation', href: '/services/ai-and-automation' },
   { label: 'ERP & CRM Transformation', href: '/services/erp-and-crm-transformation' },
+  { label: 'Procurement & Contracting', href: '/services/procurement-and-contracting' },
 ]
 
 const navItems = [
