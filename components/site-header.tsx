@@ -21,6 +21,9 @@ const functionItems: MenuItem[] = [
   { label: 'Finance: AR & AP', href: '/functions/finance-ar-and-ap' },
   { label: 'Logistics', href: '/functions/logistics' },
   { label: 'Procurement', href: '/functions/procurement' },
+  { label: 'Sales, Demand Generation & GTM', href: '/functions/sales-demand-generation-and-gtm' },
+  { label: 'Supply Chain Transformation', href: '/functions/supply-chain-transformation' },
+  { label: 'Sustainability & Emissions', href: '/functions/sustainability-and-emissions' },
 ]
 
 function menuItemsFor(label: string): MenuItem[] | null {
