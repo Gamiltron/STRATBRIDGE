@@ -5,12 +5,59 @@ import Link from 'next/link'
 import { BrandLogo } from '@/components/brand-logo'
 import { ArrowRightIcon, CloseIcon, MenuIcon } from '@/components/icons'
 
-const serviceItems = [
+type MenuItem = {
+  label: string
+  href: string
+}
+
+const serviceItems: MenuItem[] = [
   { label: 'Readiness Assessment', href: '/readiness-assessment' },
   { label: 'AI & Automation', href: '/services/ai-and-automation' },
   { label: 'ERP & CRM Transformation', href: '/services/erp-and-crm-transformation' },
   { label: 'Procurement & Contracting', href: '/services/procurement-and-contracting' },
 ]
+
+const functionItems: MenuItem[] = [
+  { label: 'Finance: AR & AP', href: '/functions/finance-ar-and-ap' },
+  { label: 'Logistics', href: '/functions/logistics' },
+  { label: 'Procurement', href: '/functions/procurement' },
+]
+
+function menuItemsFor(label: string): MenuItem[] | null {
+  if (label === 'Services') return serviceItems
+  if (label === 'Functions') return functionItems
+  return null
+}
+
+function DropdownMenu({
+  items,
+  label,
+  onNavigate,
+}: {
+  items: MenuItem[]
+  label: string
+  onNavigate: () => void
+}) {
+  return (
+    <div
+      role="menu"
+      aria-label={`${label} submenu`}
+      className="absolute left-0 top-full z-50 mt-2 w-64 border border-navy/10 bg-cream p-2 shadow-xl"
+    >
+      {items.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={onNavigate}
+          role="menuitem"
+          className="block px-4 py-2.5 text-sm text-navy transition-colors hover:bg-cream-dark hover:text-rust"
+        >
+          {item.label}
+        </Link>
+      ))}
+    </div>
+  )
+}
 
 const navItems = [
   { label: 'Home', href: '/', caret: false },
@@ -79,11 +126,12 @@ export function SiteHeader({ active }: { active?: string }) {
             {navItems.map((item) => {
               const isActive = item.label === active
               const isOpen = openDropdown === item.label
+              const menuItems = menuItemsFor(item.label)
 
               return (
                 <li
                   key={item.label}
-                  ref={item.label === 'Services' ? dropdownRef : undefined}
+                  ref={isOpen ? dropdownRef : undefined}
                   className="relative"
                 >
                   {item.caret ? (
@@ -104,24 +152,12 @@ export function SiteHeader({ active }: { active?: string }) {
                         {item.label}
                         <Caret className={isOpen ? 'rotate-180' : ''} />
                       </button>
-                      {isOpen && item.label === 'Services' ? (
-                        <div
-                          role="menu"
-                          aria-label="Services submenu"
-                          className="absolute left-0 top-full z-50 mt-2 w-64 border border-navy/10 bg-cream p-2 shadow-xl"
-                        >
-                          {serviceItems.map((service) => (
-                            <Link
-                              key={service.href}
-                              href={service.href}
-                              onClick={() => setOpenDropdown(null)}
-                              role="menuitem"
-                              className="block px-4 py-2.5 text-sm text-navy transition-colors hover:bg-cream-dark hover:text-rust"
-                            >
-                              {service.label}
-                            </Link>
-                          ))}
-                        </div>
+                      {isOpen && menuItems ? (
+                        <DropdownMenu
+                          items={menuItems}
+                          label={item.label}
+                          onNavigate={() => setOpenDropdown(null)}
+                        />
                       ) : null}
                     </>
                   ) : (
@@ -178,7 +214,8 @@ export function SiteHeader({ active }: { active?: string }) {
           <ul className="mx-auto flex max-w-7xl flex-col px-6 py-4 text-sm text-navy">
             {navItems.map((item) => {
               const isActive = item.label === active
-              const showSubmenu = item.caret && item.label === 'Services'
+              const menuItems = menuItemsFor(item.label)
+              const showSubmenu = item.caret && menuItems !== null
               return (
                 <li key={item.label}>
                   <Link
@@ -194,7 +231,7 @@ export function SiteHeader({ active }: { active?: string }) {
                   </Link>
                   {showSubmenu ? (
                     <ul className="ml-3 border-l border-navy/15 pl-4">
-                      {serviceItems.map((service) => (
+                      {menuItems.map((service) => (
                         <li key={service.href}>
                           <Link
                             href={service.href}
