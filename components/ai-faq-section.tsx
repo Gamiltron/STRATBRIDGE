@@ -5,16 +5,16 @@ import { ArrowRightIcon } from '@/components/icons'
 
 const faqs = [
   {
-    q: 'How do we decide where to start with AI & automation?',
-    a: 'We begin by understanding your processes, data and business goals, then identify the use cases offering the strongest combination of value and feasibility — so you start where the impact is most tangible.',
+    q: 'What kind of AI solutions do you implement?',
+    a: 'We implement practical AI across intelligent automation (RPA and workflows), data analytics and machine learning, and generative AI tools — always selected and scoped around your business goals and existing systems.',
   },
   {
-    q: 'How do you ensure responsible and secure AI adoption?',
-    a: 'Responsible AI is built in from the start. We embed governance, data privacy, bias mitigation and human oversight into the design so every automation is transparent, compliant and safe to scale.',
+    q: 'How do you identify the right use cases?',
+    a: 'We start with your processes, data and strategic priorities, then shortlist use cases by business value, feasibility and risk — helping you focus on the opportunities with the strongest and fastest return.',
   },
   {
-    q: 'Do you provide ongoing support after implementation?',
-    a: 'Yes. We support you beyond go-live with change management, hypercare and continuous optimisation, ensuring your automation matures, adapts and keeps delivering results.',
+    q: 'Do you support implementation and change management?',
+    a: 'Yes. We support you beyond design and build — through deployment, integration, user training and change adoption — so new capabilities are used and realised benefits are sustained.',
   },
 ]
 

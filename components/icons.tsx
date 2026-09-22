@@ -409,6 +409,27 @@ export function RouteIcon(props: IconProps) {
   )
 }
 
+export function RobotIcon(props: IconProps) {
+  return (
+    <svg aria-hidden="true" {...base} {...props}>
+      <rect x="4" y="7" width="16" height="12" rx="2" />
+      <path d="M12 7V4M8 4h8" />
+      <circle cx="9" cy="12" r="1.2" />
+      <circle cx="15" cy="12" r="1.2" />
+      <path d="M9 16h6" />
+    </svg>
+  )
+}
+
+export function MessageSquareIcon(props: IconProps) {
+  return (
+    <svg aria-hidden="true" {...base} {...props}>
+      <path d="M21 11.6a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.5-.77L3 21l1.77-6A8.5 8.5 0 1 1 21 11.6Z" />
+      <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" />
+    </svg>
+  )
+}
+
 export function MenuIcon(props: IconProps) {
   return (
     <svg aria-hidden="true" {...base} {...props}>

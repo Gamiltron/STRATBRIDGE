@@ -2,27 +2,27 @@ const steps = [
   {
     n: '1',
     title: 'Discover',
-    body: 'Map your processes, data and goals to find where friction lives',
+    body: 'Understand your business, processes and data landscape',
   },
   {
     n: '2',
     title: 'Identify',
-    body: 'Shortlist the highest-value, lowest-risk AI and automation use cases',
+    body: 'Shortlist high-value AI and automation use cases',
   },
   {
     n: '3',
     title: 'Design',
-    body: 'Architect the solution, data readiness and governance approach',
+    body: 'Define solution approach, effort and ROI',
   },
   {
     n: '4',
     title: 'Implement',
-    body: 'Build, integrate and automate — proving value early and safely',
+    body: 'Support deployment and change adoption',
   },
   {
     n: '5',
     title: 'Scale',
-    body: 'Expand responsibly with change management and continuous improvement',
+    body: 'Measure impact and expand to new opportunities',
   },
 ]
 
@@ -31,13 +31,13 @@ export function AiApproachSection() {
     <section className="bg-cream" aria-labelledby="ai-approach-heading">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-navy/70">
-          Our Approach
+          OUR APPROACH
         </p>
         <h2
           id="ai-approach-heading"
           className="mt-4 max-w-3xl font-serif text-3xl font-semibold text-navy sm:text-4xl"
         >
-          A practical path from idea to scaled automation<span className="text-rust">.</span>
+          From opportunity to impact.
         </h2>
 
         <ol className="mt-16 grid gap-y-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-4">

@@ -7,7 +7,7 @@ export function AiCtaBanner() {
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-10">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-navy/70">
-            Let&apos;s Build What&apos;s Next
+            LET&apos;S BUILD WHAT&apos;S NEXT
           </p>
           <h2
             id="ai-cta-heading"
@@ -16,7 +16,7 @@ export function AiCtaBanner() {
             Explore what AI and automation can do for you.
           </h2>
           <p className="mt-3 text-base text-navy/70">
-            Let&apos;s start with a conversation about your operations.
+            Let&apos;s discuss your opportunities.
           </p>
         </div>
 

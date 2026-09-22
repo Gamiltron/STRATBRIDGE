@@ -7,19 +7,17 @@ export function AiHero() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-10 lg:grid-cols-[1.05fr_1.1fr_0.55fr] lg:gap-8 lg:px-10 lg:py-14">
         <div className="max-w-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-navy/70">
-            Ideas to Efficiency
+            IDEAS TO EFFICIENCY
           </p>
           <h1
             id="ai-hero-heading"
             className="mt-5 font-serif text-4xl font-semibold leading-[1.08] text-navy sm:text-5xl"
           >
-            AI &amp; Automation<span className="text-rust">.</span>
+            AI &amp; Automation
           </h1>
           <p className="mt-6 text-base leading-relaxed text-navy/70">
-            We design, build and scale intelligent automation that turns
-            everyday operations into a competitive advantage — cutting manual
-            effort, sharpening decisions and freeing your people for work that
-            truly matters.
+            Unlock efficiency, insight and scale with practical AI and
+            automation solutions tailored to your business.
           </p>
           <Link
             href="/contact"
@@ -32,21 +30,21 @@ export function AiHero() {
 
         <div className="overflow-hidden">
           <img
-            src="/images/AI & Automation.png"
-            alt="Futuristic visual of intelligent automation and artificial intelligence"
+            src="/images/skyline-bridge.png"
+            alt="Architectural concrete bridge and overpass against the sky"
             className="aspect-[4/3] w-full object-cover"
           />
         </div>
 
         <div className="border-l-2 border-rust/70 pl-6 lg:pl-8">
           <p className="text-sm font-medium uppercase leading-relaxed tracking-[0.2em] text-navy">
-            Automate,
+            AUTOMATE
             <br />
-            Simplify,
+            SIMPLIFY
             <br />
-            Augment,
+            AUGMENT
             <br />
-            Accelerate.
+            ACCELERATE
           </p>
         </div>
       </div>

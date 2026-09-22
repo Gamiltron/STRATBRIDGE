@@ -1,30 +1,30 @@
 import {
-  ScanTextIcon,
-  WorkflowIcon,
-  TrendingUpIcon,
+  DocumentIcon,
+  TruckIcon,
+  BarChartIcon,
   UsersIcon,
 } from '@/components/icons'
 
 const useCases = [
   {
-    Icon: ScanTextIcon,
+    Icon: DocumentIcon,
     title: 'Intelligent Document Processing',
-    body: 'Extract, classify and validate information from invoices, contracts and forms — automatically and accurately.',
+    body: 'Automate data extraction and processing from invoices, contracts and other documents.',
   },
   {
-    Icon: WorkflowIcon,
+    Icon: TruckIcon,
     title: 'Operational Automation',
-    body: 'Orchestrate end-to-end processes across systems to eliminate manual handoffs and reduce errors.',
+    body: 'Automate repetitive tasks across supply chain, logistics, procurement and finance.',
   },
   {
-    Icon: TrendingUpIcon,
+    Icon: BarChartIcon,
     title: 'Insights & Forecasting',
-    body: 'Surface patterns early and forecast demand, costs and performance with AI-driven analytics.',
+    body: 'Use AI to surface insights, identify trends and improve forecast accuracy.',
   },
   {
     Icon: UsersIcon,
     title: 'Employee Productivity',
-    body: 'Give teams intelligent assistance for the work they do every day, enabling focus on what matters.',
+    body: 'Enable your teams with GenAI tools and automated workflows.',
   },
 ]
 
@@ -33,13 +33,13 @@ export function AiUseCasesSection() {
     <section className="bg-cream" aria-labelledby="ai-use-cases-heading">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-navy/70">
-          Example Use Cases
+          EXAMPLE USE CASES
         </p>
         <h2
           id="ai-use-cases-heading"
           className="mt-4 max-w-3xl font-serif text-3xl font-semibold text-navy sm:text-4xl"
         >
-          Real world applications, tangible results<span className="text-rust">.</span>
+          Real possibilities across your business.
         </h2>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
