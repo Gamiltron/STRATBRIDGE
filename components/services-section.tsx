@@ -1,3 +1,5 @@
+'use client'
+
 import {
   ClipboardIcon,
   ChipIcon,
@@ -16,6 +18,12 @@ const services = [
   { Icon: LeafIcon, label: 'Commercials & Contracting' },
   { Icon: UsersIcon, label: 'Change Management & Hypercare' },
 ]
+
+function handleExploreServices() {
+  window.dispatchEvent(
+    new CustomEvent('open-services-dropdown', { detail: 'Services' }),
+  )
+}
 
 export function ServicesSection() {
   return (
@@ -45,13 +53,14 @@ export function ServicesSection() {
           ))}
         </ul>
 
-        <a
-          href="#"
+        <button
+          type="button"
+          onClick={handleExploreServices}
           className="mt-12 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-rust transition-colors hover:text-rust/80"
         >
           Explore Our Services
           <ArrowRightIcon className="h-4 w-4" />
-        </a>
+        </button>
       </div>
     </section>
   )

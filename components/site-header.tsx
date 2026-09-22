@@ -92,6 +92,27 @@ export function SiteHeader({ active }: { active?: string }) {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const dropdownRef = useRef<HTMLLIElement>(null)
+  const headerRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    function handleOpenDropdown(event: Event) {
+      const { detail } = event as CustomEvent<string>
+      setOpenDropdown((current) => current ?? (detail || 'Services'))
+      if (window.matchMedia('(max-width: 1023px)').matches) {
+        setIsOpen(true)
+      }
+      headerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+
+    const eventNames = ['open-services-dropdown', 'open-functions-dropdown']
+    eventNames.forEach((name) =>
+      window.addEventListener(name, handleOpenDropdown),
+    )
+    return () =>
+      eventNames.forEach((name) =>
+        window.removeEventListener(name, handleOpenDropdown),
+      )
+  }, [])
 
   useEffect(() => {
     function handlePointerDown(event: MouseEvent | TouchEvent) {
@@ -120,7 +141,7 @@ export function SiteHeader({ active }: { active?: string }) {
   }, [])
 
   return (
-    <header className="bg-cream">
+    <header ref={headerRef} className="bg-cream">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-6 lg:px-10">
         <BrandLogo />
 

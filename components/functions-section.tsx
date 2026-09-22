@@ -1,3 +1,5 @@
+'use client'
+
 import {
   BoxIcon,
   TruckIcon,
@@ -17,6 +19,12 @@ const functions = [
   { Icon: LeafIcon, label: 'Sustainability & Carbon Visibility' },
 ]
 
+function handleExploreFunctions() {
+  window.dispatchEvent(
+    new CustomEvent('open-functions-dropdown', { detail: 'Functions' }),
+  )
+}
+
 export function FunctionsSection() {
   return (
     <section className="bg-cream" aria-labelledby="functions-heading">
@@ -31,13 +39,14 @@ export function FunctionsSection() {
           >
             Deep functional expertise. Real business impact<span className="text-rust">.</span>
           </h2>
-          <a
-            href="#"
+          <button
+            type="button"
+            onClick={handleExploreFunctions}
             className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-rust transition-colors hover:text-rust/80"
           >
             Explore All Functions
             <ArrowRightIcon className="h-4 w-4" />
-          </a>
+          </button>
         </div>
 
         <ul className="mt-12 grid gap-y-10 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-4 lg:gap-y-0 lg:divide-x lg:divide-navy/15">
