@@ -67,7 +67,7 @@ const navItems = [
   { label: 'About', href: '/about', caret: false },
   { label: 'Services', href: '/readiness-assessment', caret: true },
   { label: 'Functions', href: '#', caret: true },
-  { label: 'Insights', href: '#', caret: false },
+  { label: 'Insights', href: '/insights', caret: false },
   { label: 'Contact us', href: '/contact', caret: false },
 ]
 
